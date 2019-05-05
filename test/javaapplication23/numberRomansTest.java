@@ -1,20 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package javaapplication23;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
  *
- * @author USER
+ * @author: Luis Alberto Guardia Calcina
  */
 public class numberRomansTest {
     numberRomans romans = new numberRomans();
@@ -33,6 +24,7 @@ public class numberRomansTest {
     }
     
     @Test
+    
     public void test_when_send_value_valid() {  
         String numberRoman = "XXX";
         int valueRoman = romans.convertToInt(numberRoman);
@@ -49,6 +41,14 @@ public class numberRomansTest {
     }
     
     @Test
+    public void test_when_send_value_invalids() {  
+        String numberRoman = "VV";
+        int valueRoman = romans.convertToInt(numberRoman);
+        int expected = 0;
+        assertEquals(expected, valueRoman);
+    }
+    
+    @Test
     public void test_when_send_characters_special() {  
         String numberRoman = "???";
         int valueRoman = romans.convertToInt(numberRoman);
@@ -58,7 +58,7 @@ public class numberRomansTest {
     
     @Test
     public void test_when_send_numbers_natural() {  
-        String numberRoman = "XX23";
+        String numberRoman = "123";
         int valueRoman = romans.convertToInt(numberRoman);
         int expected = 0;
         assertEquals(expected, valueRoman);
@@ -66,7 +66,7 @@ public class numberRomansTest {
     
     @Test
     public void test_when_send_space_white() {  
-        String numberRoman = "";
+        String numberRoman = " ";
         int valueRoman = romans.convertToInt(numberRoman);
         int expected = 0;
         assertEquals(expected, valueRoman);
